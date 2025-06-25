@@ -64,7 +64,7 @@ const ChatContainer = () => {
                         {msg.image ? (
                             <img src={msg.image} alt="" className='max-w-[230px] border border-gray-700 rounded-lg overflow-hidden mb-8'/>
                         ):(
-                            <p className={`p-2 max-w-[200px] md:text-sm font-light rounded-lg mb-8 break-all bg-violet-500/30 text-white ${msg.senderId !== '680f50e4f10f3cd28382ecf9' ? 'rounded-bl-none' : 'rounded-bl-none'}`}>{msg.text}</p>
+                            <p className={`p-2 max-w-[200px] md:text-sm font-light rounded-lg mb-8 break-all bg-violet-500/30 text-white ${msg.senderId !== authUser._id ? 'rounded-bl-none' : 'rounded-br-none'}`}>{msg.text}</p>
                         )}
                         <div className='text-center text-xs'>
                             <img src={msg.senderId === authUser._id ? authUser?.profilePic || assets.avatar_icon : selectedUser?.profilePic || assets.avatar_icon} alt="" className='w-7 rounded-full'/>
@@ -81,7 +81,7 @@ const ChatContainer = () => {
                 <input onChange={handleSendImage} type="file" id='image' accept='image/png, image/jpeg' hidden/>
                 <label htmlFor="image"><img src={assets.gallery_icon} alt="" className='w-5 mr-2 cursor-pointer'/></label>
                 </div>
-                    <img onClick={handleSendImage} src={assets.send_button} alt="" className="w-7 cursor-pointer"/>
+                    <img onClick={handleSendMessage} src={assets.send_button} alt="" className="w-7 cursor-pointer"/>
             </div>
         </div>
     ) : (

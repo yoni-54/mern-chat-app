@@ -1,4 +1,4 @@
-# 🚀 MERN Stack App
+# 🚀 MERN Stack Chat App
 Welcome to the chat app, a powerful full-stack web app built with the awesome MERN stack — MongoDB, Express, React, and Node.js.
 
 # ✨ What Can It Do?
